@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="assets/favicon.ico">
+  <title>Tiny Admin - 基础表格</title>
+  <link rel="stylesheet" href="css/simplebar.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/nprogress.min.css">
+  <link rel="stylesheet" href="css/feather.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+  <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+</head>
+
+<body class="vertical light  ">
+  <div class="wrapper">
+    <nav class="topnav navbar navbar-light">
+      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+      </button>
+      <form class="form-inline mr-auto searchform text-muted">
+        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="输入关键词..."
+          aria-label="Search">
+      </form>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="javascript:;" id="modeSwitcher" data-mode="light">
+            <i class="fe fe-sun fe-16"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+            <span class="fe fe-grid fe-16"></span>
+          </a>
+        </li>
+        <li class="nav-item nav-notif">
+          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+            <span class="fe fe-bell fe-16"></span>
+            <span class="dot dot-md bg-success"></span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar avatar-sm mt-2">
+              <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="auth_register.html">注册</a>
+            <a class="dropdown-item" href="auth_login1.html">登录1</a>
+            <a class="dropdown-item" href="auth_login2.html">登录2</a>
+            <a class="dropdown-item" href="auth_resetpwd.html">重置密码</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+        <i class="fe fe-x"><span class="sr-only"></span></i>
+      </a>
+      <nav class="vertnav navbar navbar-light">
+
+        <div class="w-100 mb-4 d-flex">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                             id="logo"
+                             x="0px"
+                             y="0px"
+                             class="navbar-brand-img brand-sm"
+                             viewBox="0 0 25 25"
+                        >
+                            <path xmlns="http://www.w3.org/2000/svg" d="M19.803 13.207l-.829 1.093-1.554-3.826c-.077-.189-.244-.306-.437-.306-.157 0-.356.084-.444.321l-1.356 3.664-1.872-8.759c-.062-.291-.288-.394-.462-.394-.203 0-.428.131-.473.424l-1.629 10.581-1.658-6.968c-.067-.282-.291-.382-.463-.382-.167 0-.374.092-.453.349l-1.453 4.753-1.07-2.53c-.078-.185-.245-.299-.436-.299-.154 0-.294.076-.385.209l-1.257 1.805-.087.058h-2.985c-.276 0-.5.224-.5.5s.224.5.5.5h3.284c.152 0 .296-.074.386-.206l.948-1.353 1.24 2.929c.079.187.241.299.433.299.211 0 .39-.138.455-.35l1.324-4.332 1.814 7.629c.068.283.282.384.46.384.203 0 .428-.131.473-.425l1.605-10.425 1.673 7.83c.058.272.277.395.467.395.202 0 .366-.12.441-.321l1.5-4.049 1.426 3.51c.077.189.245.306.438.306.152 0 .292-.075.382-.206l1.146-1.583.087-.046h3.026c.272 0 .492-.22.492-.492s-.22-.494-.492-.494h-3.322c-.151 0-.294.077-.383.207z"/>
+                        </svg>
+          </a>
+        </div>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-home fe-16"></i>
+              <span class="ml-3 item-text">面板</span>
+              <span class="sr-only">(当前)</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+              <li class="nav-item active">
+                <a class="nav-link pl-3" href="./index.html">
+                  <span class="ml-1 item-text">默认</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./dashboard-analytics.html">
+                  <span class="ml-1 item-text">Analytics</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./dashboard-sales.html">
+                  <span class="ml-1 item-text">E-commerce</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./dashboard-saas.html">
+                  <span class="ml-1 item-text">Saas</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./dashboard-system.html">
+                  <span class="ml-1 item-text">Systems</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>组件</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-box fe-16"></i>
+              <span class="ml-3 item-text">界面</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-color.html">
+                  <span class="ml-1 item-text">主题色</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-typograpy.html">
+                  <span class="ml-1 item-text">排版</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-icons.html">
+                  <span class="ml-1 item-text">图标</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-buttons.html">
+                  <span class="ml-1 item-text">按钮</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-notification.html">
+                  <span class="ml-1 item-text">通知</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-modals.html">
+                  <span class="ml-1 item-text">浮窗</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-tabs-accordion.html">
+                  <span class="ml-1 item-text">手风琴</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./ui-progress.html">
+                  <span class="ml-1 item-text">进度条</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item w-100">
+            <a class="nav-link" href="widgets.html">
+              <i class="fe fe-layers fe-16"></i>
+              <span class="ml-3 item-text">组件</span>
+              <span class="badge badge-pill badge-primary">新</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-credit-card fe-16"></i>
+              <span class="ml-3 item-text">表单</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="forms">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./form_elements.html">
+                  <span class="ml-1 item-text">基础表单</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./form_advanced.html">
+                  <span class="ml-1 item-text">高级表单</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./form_validation.html">
+                  <span class="ml-1 item-text">表单验证</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./form_wizard.html">
+                  <span class="ml-1 item-text">表单流转</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./form_layouts.html">
+                  <span class="ml-1 item-text">表单布局</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-grid fe-16"></i>
+              <span class="ml-3 item-text">表格</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="tables">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./table_basic.html">
+                  <span class="ml-1 item-text">基础表格</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./table_advanced.html">
+                  <span class="ml-1 item-text">高级表格</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./table_datatables.html">
+                  <span class="ml-1 item-text">数据表格</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item w-100">
+            <a class="nav-link" href="calendar.html">
+              <i class="fe fe-calendar fe-16"></i>
+              <span class="ml-3 item-text">日历</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#charts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-pie-chart fe-16"></i>
+              <span class="ml-3 item-text">图表</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="charts">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./chart-inline.html">
+                  <span class="ml-1 item-text">Inline Chart</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./chart-chartjs.html">
+                  <span class="ml-1 item-text">Chartjs</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./chart-apexcharts.html">
+                  <span class="ml-1 item-text">ApexCharts</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./datamaps.html">
+                  <span class="ml-1 item-text">Datamaps</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>其他</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-file fe-16"></i>
+              <span class="ml-3 item-text">页面</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100 w-100" id="pages">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-orders.html">
+                  <span class="ml-1 item-text">排序</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-contacts.html">
+                  <span class="ml-1 item-text">联系</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-tickets.html">
+                  <span class="ml-1 item-text">票据</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-timeline.html">
+                  <span class="ml-1 item-text">时间线</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-files.html">
+                  <span class="ml-1 item-text">文件管理</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-faqs.html">
+                  <span class="ml-1 item-text">常见问题</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-invoice.html">
+                  <span class="ml-1 item-text">发票</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-settings.html">
+                  <span class="ml-1 item-text">设置</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-404.html">
+                  <span class="ml-1 item-text">404</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-500.html">
+                  <span class="ml-1 item-text">500</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./page-blank.html">
+                  <span class="ml-1 item-text">空白页</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#layouts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-layout fe-16"></i>
+              <span class="ml-3 item-text">布局</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="layouts">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./index.html">
+                  <span class="ml-1 item-text">默认</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./index-horizontal.html">
+                  <span class="ml-1 item-text">顶部导航</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>贡献</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item w-100">
+            <a class="nav-link" href="donate.html">
+              <i class="fe fe-help-circle fe-16"></i>
+              <span class="ml-3 item-text">打赏捐赠</span>
+            </a>
+          </li>
+        </ul>
+        <div class="btn-box w-100 mt-4 mb-1">
+          <button type="button" class="btn mb-2 btn-primary btn-lg btn-block" id="modeSwitcher" data-mode="light">
+            <i class="fe fe-shopping-cart fe-12 mr-2"></i><span class="small">马上买</span>
+          </button>
+        </div>
+      </nav>
+    </aside>
+    <main role="main" class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h2 class="page-title">Basic table</h2>
+            <p> Tables with built-in bootstrap styles </p>
+            <div class="row">
+
+              <div class="col-md-6 my-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Simple Table</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Company</th>
+                          <th>Address</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>3224</td>
+                          <td>Keith Baird</td>
+                          <td>Enim Limited</td>
+                          <td>901-6206 Cras Av.</td>
+                          <td>Apr 24, 2019</td>
+                          <td><span class="badge badge-pill badge-warning">Hold</span></td>
+                        </tr>
+                        <tr>
+                          <td>3218</td>
+                          <td>Graham Price</td>
+                          <td>Nunc Lectus Incorporated</td>
+                          <td>Ap #705-5389 Id St.</td>
+                          <td>May 23, 2020</td>
+                          <td><span class="badge badge-pill badge-success">Success</span></td>
+                        </tr>
+                        <tr>
+                          <td>2651</td>
+                          <td>Reuben Orr</td>
+                          <td>Nisi Aenean Eget Limited</td>
+                          <td>7425 Malesuada Rd.</td>
+                          <td>Nov 4, 2019</td>
+                          <td><span class="badge badge-pill badge-warning">Hold</span></td>
+                        </tr>
+                        <tr>
+                          <td>2636</td>
+                          <td>Akeem Holder</td>
+                          <td>Pellentesque Associates</td>
+                          <td>896 Sodales St.</td>
+                          <td>Mar 27, 2020</td>
+                          <td><span class="badge badge-pill badge-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                          <td>2757</td>
+                          <td>Beau Barrera</td>
+                          <td>Augue Incorporated</td>
+                          <td>4583 Id St.</td>
+                          <td>Jan 13, 2020</td>
+                          <td><span class="badge badge-pill badge-success">Success</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 my-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Bordered table</h5>
+                    <p class="card-text">Add .table-bordered for borders on all sides of the table and cells.</p>
+                    <table class="table table-bordered table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Company</th>
+                          <th>Address</th>
+                          <th>Date</th>
+                          <th>Activate</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>3224</td>
+                          <td>Keith Baird</td>
+                          <td>Enim Limited</td>
+                          <td>901-6206 Cras Av.</td>
+                          <td>Apr 24, 2019</td>
+                          <td>
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" class="custom-control-input" id="c1" checked>
+                              <label class="custom-control-label" for="c1"></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3218</td>
+                          <td>Graham Price</td>
+                          <td>Nunc Lectus Incorporated</td>
+                          <td>Ap #705-5389 Id St.</td>
+                          <td>May 23, 2020</td>
+                          <td>
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" class="custom-control-input" id="c2">
+                              <label class="custom-control-label" for="c2"></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2651</td>
+                          <td>Reuben Orr</td>
+                          <td>Nisi Aenean Eget Limited</td>
+                          <td>7425 Malesuada Rd.</td>
+                          <td>Nov 4, 2019</td>
+                          <td>
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" class="custom-control-input" id="c3" checked>
+                              <label class="custom-control-label" for="c3"></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2636</td>
+                          <td>Akeem Holder</td>
+                          <td>Pellentesque Associates</td>
+                          <td>896 Sodales St.</td>
+                          <td>Mar 27, 2020</td>
+                          <td>
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" class="custom-control-input" id="c4">
+                              <label class="custom-control-label" for="c4"></label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2757</td>
+                          <td>Beau Barrera</td>
+                          <td>Augue Incorporated</td>
+                          <td>4583 Id St.</td>
+                          <td>Jan 13, 2020</td>
+                          <td>
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" class="custom-control-input" id="c5">
+                              <label class="custom-control-label" for="c5"></label>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6 my-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Striped rows</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <table class="table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="chall">
+                              <label class="custom-control-label" for="d1"></label>
+                            </div>
+                          </th>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Address</th>
+                          <th>Phone</th>
+                          <th>Date</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="d1">
+                              <label class="custom-control-label" for="d1"></label>
+                            </div>
+                          </td>
+                          <td>2474</td>
+                          <td>Brown, Asher D.</td>
+                          <td>Ap #331-7123 Lobortis Avenue</td>
+                          <td>(958) 421-0798</td>
+                          <td>13/09/2020</td>
+                          <td>
+                            <div class="dropdown">
+                              <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">Remove</a>
+                                <a class="dropdown-item" href="#">Assign</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="d2">
+                              <label class="custom-control-label" for="d2"></label>
+                            </div>
+                          </td>
+                          <td>2786</td>
+                          <td>Leblanc, Yoshio V.</td>
+                          <td>287-8300 Nisl. St.</td>
+                          <td>(899) 881-3833</td>
+                          <td>04/05/2019</td>
+                          <td>
+                            <div class="dropdown">
+                              <button class="btn btn-sm dropdown-toggle" type="button" id="dr2" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr2">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">Remove</a>
+                                <a class="dropdown-item" href="#">Assign</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="d3">
+                              <label class="custom-control-label" for="d3"></label>
+                            </div>
+                          </td>
+                          <td>2747</td>
+                          <td>Hester, Nissim L.</td>
+                          <td>4577 Cras St.</td>
+                          <td>(977) 220-6518</td>
+                          <td>Nov 4, 2019</td>
+                          <td>
+                            <div class="dropdown">
+                              <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">Remove</a>
+                                <a class="dropdown-item" href="#">Assign</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="d4">
+                              <label class="custom-control-label" for="d4"></label>
+                            </div>
+                          </td>
+                          <td>2639</td>
+                          <td>Gardner, Leigh S.</td>
+                          <td>P.O. Box 228, 7512 Lectus Ave</td>
+                          <td>(537) 315-1481</td>
+                          <td>04/08/2019</td>
+                          <td>
+                            <div class="dropdown">
+                              <button class="btn btn-sm dropdown-toggle" type="button" id="dr4" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr4">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">Remove</a>
+                                <a class="dropdown-item" href="#">Assign</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="d5">
+                              <label class="custom-control-label" for="d5"></label>
+                            </div>
+                          </td>
+                          <td>2238</td>
+                          <td>Higgins, Uriah L.</td>
+                          <td>Ap #377-5357 Sed Road</td>
+                          <td>(238) 386-0247</td>
+                          <td>Jan 13, 2020</td>
+                          <td>
+                            <div class="dropdown">
+                              <button class="btn btn-sm dropdown-toggle" type="button" id="dr5" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr5">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">Remove</a>
+                                <a class="dropdown-item" href="#">Assign</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 my-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Table head options</h5>
+                    <p class="card-text">Add .table-hover to enable a hover state on table rows within a <tbody>
+                    </p>
+                    <table class="table table-hover">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>ID</th>
+                          <th>Progress</th>
+                          <th>Name</th>
+                          <th>Company</th>
+                          <th>Address</th>
+                          <th>Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2370</td>
+                          <td>
+                            <div class="progress progress-sm" style="height:3px">
+                              <div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="87"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>Barry Bright</td>
+                          <td>Donec Corporation</td>
+                          <td>662-5410 Eu Ave</td>
+                          <td>Jun 22, 2020</td>
+                        </tr>
+                        <tr>
+                          <td>3224</td>
+                          <td>
+                            <div class="progress progress-sm" style="height:3px">
+                              <div class="progress-bar bg-warning" role="progressbar" style="width: 37%"
+                                aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>Keith Baird</td>
+                          <td>Enim Limited</td>
+                          <td>901-6206 Cras Av.</td>
+                          <td>Apr 24, 2019</td>
+                        </tr>
+                        <tr>
+                          <td>3218</td>
+                          <td>
+                            <div class="progress progress-sm" style="height:3px">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>Graham Price</td>
+                          <td>Nunc Lectus Incorporated</td>
+                          <td>Ap #705-5389 Id St.</td>
+                          <td>May 23, 2020</td>
+                        </tr>
+                        <tr>
+                          <td>2651</td>
+                          <td>
+                            <div class="progress progress-sm" style="height:3px">
+                              <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>Reuben Orr</td>
+                          <td>Nisi Aenean Eget Limited</td>
+                          <td>7425 Malesuada Rd.</td>
+                          <td>Nov 4, 2019</td>
+                        </tr>
+                        <tr>
+                          <td>2636</td>
+                          <td>
+                            <div class="progress progress-sm" style="height:3px">
+                              <div class="progress-bar bg-danger" role="progressbar" style="width: 8%" aria-valuenow="8"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>Akeem Holder</td>
+                          <td>Pellentesque Associates</td>
+                          <td>896 Sodales St.</td>
+                          <td>Mar 27, 2020</td>
+                        </tr>
+                        <tr>
+                          <td>2757</td>
+                          <td>
+                            <div class="progress progress-sm" style="height:3px">
+                              <div class="progress-bar bg-warning" role="progressbar" style="width: 55%"
+                                aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>Beau Barrera</td>
+                          <td>Augue Incorporated</td>
+                          <td>4583 Id St.</td>
+                          <td>Jan 13, 2020</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6 my-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Small table</h5>
+                    <p class="card-text">Add .table-sm to make tables more compact by cutting cell padding in half.</p>
+                    <table class="table table-hover table-sm">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Company</th>
+                          <th>Address</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>3224</td>
+                          <td>Keith Baird</td>
+                          <td>Enim Limited</td>
+                          <td>901-6206 Cras Av.</td>
+                          <td>Apr 24, 2019</td>
+                          <td><span class="text-warning">Hold</span></td>
+                        </tr>
+                        <tr>
+                          <td>3218</td>
+                          <td>Graham Price</td>
+                          <td>Nunc Lectus Incorporated</td>
+                          <td>Ap #705-5389 Id St.</td>
+                          <td>May 23, 2020</td>
+                          <td><span class="text-success">Success</span></td>
+                        </tr>
+                        <tr>
+                          <td>2651</td>
+                          <td>Reuben Orr</td>
+                          <td>Nisi Aenean Eget Limited</td>
+                          <td>7425 Malesuada Rd.</td>
+                          <td>Nov 4, 2019</td>
+                          <td><span class="text-warning">Hold</span></td>
+                        </tr>
+                        <tr>
+                          <td>2636</td>
+                          <td>Akeem Holder</td>
+                          <td>Pellentesque Associates</td>
+                          <td>896 Sodales St.</td>
+                          <td>Mar 27, 2020</td>
+                          <td><span class="text-danger">Danger</span></td>
+                        </tr>
+                        <tr>
+                          <td>2757</td>
+                          <td>Beau Barrera</td>
+                          <td>Augue Incorporated</td>
+                          <td>4583 Id St.</td>
+                          <td>Jan 13, 2020</td>
+                          <td><span class="text-success">Success</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 my-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Color table rows</h5>
+                    <p class="card-text">Use contextual classes to color table rows or individual cells.</p>
+                    <table class="table table-sm table-hover table-borderless">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Company</th>
+                          <th>Address</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-warning">
+                          <td>3224</td>
+                          <td>Keith Baird</td>
+                          <td>Enim Limited</td>
+                          <td>901-6206 Cras Av.</td>
+                          <td>Apr 24, 2019</td>
+                          <td><span class="badge badge-pill badge-warning">Hold</span></td>
+                        </tr>
+                        <tr class="table-success">
+                          <td>3218</td>
+                          <td>Graham Price</td>
+                          <td>Nunc Lectus Incorporated</td>
+                          <td>Ap #705-5389 Id St.</td>
+                          <td>May 23, 2020</td>
+                          <td><span class="badge badge-pill badge-success">Success</span></td>
+                        </tr>
+                        <tr class="table-warning">
+                          <td>2651</td>
+                          <td>Reuben Orr</td>
+                          <td>Nisi Aenean Eget Limited</td>
+                          <td>7425 Malesuada Rd.</td>
+                          <td>Nov 4, 2019</td>
+                          <td><span class="badge badge-pill badge-warning">Hold</span></td>
+                        </tr>
+                        <tr class="table-danger">
+                          <td>2636</td>
+                          <td>Akeem Holder</td>
+                          <td>Pellentesque Associates</td>
+                          <td>896 Sodales St.</td>
+                          <td>Mar 27, 2020</td>
+                          <td><span class="badge badge-pill badge-danger">Danger</span></td>
+                        </tr>
+                        <tr class="table-primary">
+                          <td>2757</td>
+                          <td>Beau Barrera</td>
+                          <td>Augue Incorporated</td>
+                          <td>4583 Id St.</td>
+                          <td>Jan 13, 2020</td>
+                          <td><span class="badge badge-pill badge-primary">Active</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">最新通知</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="list-group list-group-flush my-n3">
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-box fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>软件包上传成功</strong></small>
+                      <div class="my-0 text-muted small">压缩并上传包</div>
+                      <small class="badge badge-pill badge-light text-muted">1分钟前</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-download fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>小部件更新成功</strong></small>
+                      <div class="my-0 text-muted small">创建新的布局索引，表单，表格</div>
+                      <small class="badge badge-pill badge-light text-muted">2分钟前</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-inbox fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>已发送通知</strong></small>
+                      <div class="my-0 text-muted small">当我们看到数据总线时，告诉我们一个常见的问题</div>
+                      <small class="badge badge-pill badge-light text-muted">30分钟前</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-link fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>链接附在菜单上</strong></small>
+                      <div class="my-0 text-muted small">新的布局已附加到菜单</div>
+                      <small class="badge badge-pill badge-light text-muted">1小时前</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">快捷方式</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body px-5">
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-success justify-content-center">
+                    <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>区域控制</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>活动</p>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>小程序</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>上传</p>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>用户</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>设置</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/jquery.min.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="js/popper.min.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="js/moment.min.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="js/simplebar.min.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src='js/daterangepicker.js' type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="js/tinycolor-min.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="js/config.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src='js/jquery.dataTables.min.js' type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src='js/dataTables.bootstrap4.min.js' type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script type="a5562657eb904715c2a961a8-text/javascript">
+      $('#dataTable-1').DataTable(
+      {
+        autoWidth: true,
+        "lengthMenu": [
+          [16, 32, 64, -1],
+          [16, 32, 64, "All"]
+        ]
+      });
+    </script>
+  <script src="js/apps.js" type="a5562657eb904715c2a961a8-text/javascript"></script>
+  <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+    data-cf-settings="a5562657eb904715c2a961a8-|49" defer=""></script>
+  <script data-cfasync="false" src="js/nprogress.min.js"></script>
+  <script>
+    NProgress.configure({
+      easing: 'ease', // 缓冲动画类型，可选值如'ease'、'linear'等
+      speed: 500, // 动画速度，单位为毫秒
+      trickleSpeed: 200, // 每次进度条步进的速度，单位为毫秒
+      showSpinner: false, // 是否显示环形进度动画
+      minimum: 0.2 // 设置开始时最低百分比  同inc
+    });
+
+    NProgress.start();
+    NProgress.done();
+  </script>
+</body>
+
+</html>

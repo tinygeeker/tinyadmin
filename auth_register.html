@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/favicon.ico">
+    <title>Tiny Admin - 注册</title>
+    <link rel="stylesheet" href="css/simplebar.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/nprogress.min.css">
+    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+</head>
+
+<body class="light ">
+    <div class="wrapper vh-100">
+        <div class="row align-items-center h-100">
+            <form class="col-lg-6 col-md-8 col-10 mx-auto">
+                <div class="mx-auto text-center my-4">
+                    <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             id="logo"
+                             x="0px"
+                             y="0px"
+                             class="navbar-brand-img brand-sm"
+                             viewBox="0 0 25 25"
+                        >
+                            <path xmlns="http://www.w3.org/2000/svg" d="M19.803 13.207l-.829 1.093-1.554-3.826c-.077-.189-.244-.306-.437-.306-.157 0-.356.084-.444.321l-1.356 3.664-1.872-8.759c-.062-.291-.288-.394-.462-.394-.203 0-.428.131-.473.424l-1.629 10.581-1.658-6.968c-.067-.282-.291-.382-.463-.382-.167 0-.374.092-.453.349l-1.453 4.753-1.07-2.53c-.078-.185-.245-.299-.436-.299-.154 0-.294.076-.385.209l-1.257 1.805-.087.058h-2.985c-.276 0-.5.224-.5.5s.224.5.5.5h3.284c.152 0 .296-.074.386-.206l.948-1.353 1.24 2.929c.079.187.241.299.433.299.211 0 .39-.138.455-.35l1.324-4.332 1.814 7.629c.068.283.282.384.46.384.203 0 .428-.131.473-.425l1.605-10.425 1.673 7.83c.058.272.277.395.467.395.202 0 .366-.12.441-.321l1.5-4.049 1.426 3.51c.077.189.245.306.438.306.152 0 .292-.075.382-.206l1.146-1.583.087-.046h3.026c.272 0 .492-.22.492-.492s-.22-.494-.492-.494h-3.322c-.151 0-.294.077-.383.207z"/>
+                        </svg>
+                    </a>
+                    <h2 class="my-3">用户注册</h2>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail4">邮箱</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" id="firstname" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastname">Lastname</label>
+                        <input type="text" id="lastname" class="form-control">
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputPassword5">新的密码</label>
+                            <input type="password" class="form-control" id="inputPassword5">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword6">确认密码</label>
+                            <input type="password" class="form-control" id="inputPassword6">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-2">密码要求</p>
+                        <p class="small text-muted mb-2"> To create a new password, you have to meet all of the
+                            following requirements: </p>
+                        <ul class="small text-muted pl-4 mb-0">
+                            <li> Minimum 8 character </li>
+                            <li>At least one special character</li>
+                            <li>At least one number</li>
+                            <li>Can’t be the same as a previous password </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+                <p class="mt-5 mb-3 text-muted text-center">© 2024</p>
+            </form>
+        </div>
+    </div>
+    <script data-cfasync="false" src="js/nprogress.min.js"></script>
+    <script>
+        NProgress.configure({
+            easing: 'ease', // 缓冲动画类型，可选值如'ease'、'linear'等
+            speed: 500, // 动画速度，单位为毫秒
+            trickleSpeed: 200, // 每次进度条步进的速度，单位为毫秒
+            showSpinner: false, // 是否显示环形进度动画
+            minimum: 0.2 // 设置开始时最低百分比  同inc
+        });
+
+        NProgress.start();
+        NProgress.done();
+    </script>
+</body>
+
+</html>

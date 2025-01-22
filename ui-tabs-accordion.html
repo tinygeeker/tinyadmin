@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/favicon.ico">
+    <title>Tiny Admin - 手风琴</title>
+    <link rel="stylesheet" href="css/simplebar.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/nprogress.min.css">
+    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+</head>
+
+<body class="vertical light  ">
+    <div class="wrapper">
+        <nav class="topnav navbar navbar-light">
+            <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+                <i class="fe fe-menu navbar-toggler-icon"></i>
+            </button>
+            <form class="form-inline mr-auto searchform text-muted">
+                <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search"
+                    placeholder="输入关键词..." aria-label="Search">
+            </form>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-muted my-2" href="javascript:;" id="modeSwitcher" data-mode="light">
+                        <i class="fe fe-sun fe-16"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+                        <span class="fe fe-grid fe-16"></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-notif">
+                    <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+                        <span class="fe fe-bell fe-16"></span>
+                        <span class="dot dot-md bg-success"></span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar avatar-sm mt-2">
+              <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="auth_register.html">注册</a>
+            <a class="dropdown-item" href="auth_login1.html">登录1</a>
+            <a class="dropdown-item" href="auth_login2.html">登录2</a>
+            <a class="dropdown-item" href="auth_resetpwd.html">重置密码</a>
+          </div>
+        </li>
+            </ul>
+        </nav>
+        <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+            <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+                <i class="fe fe-x"><span class="sr-only"></span></i>
+            </a>
+            <nav class="vertnav navbar navbar-light">
+
+                <div class="w-100 mb-4 d-flex">
+                    <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             id="logo"
+                             x="0px"
+                             y="0px"
+                             class="navbar-brand-img brand-sm"
+                             viewBox="0 0 25 25"
+                        >
+                            <path xmlns="http://www.w3.org/2000/svg" d="M19.803 13.207l-.829 1.093-1.554-3.826c-.077-.189-.244-.306-.437-.306-.157 0-.356.084-.444.321l-1.356 3.664-1.872-8.759c-.062-.291-.288-.394-.462-.394-.203 0-.428.131-.473.424l-1.629 10.581-1.658-6.968c-.067-.282-.291-.382-.463-.382-.167 0-.374.092-.453.349l-1.453 4.753-1.07-2.53c-.078-.185-.245-.299-.436-.299-.154 0-.294.076-.385.209l-1.257 1.805-.087.058h-2.985c-.276 0-.5.224-.5.5s.224.5.5.5h3.284c.152 0 .296-.074.386-.206l.948-1.353 1.24 2.929c.079.187.241.299.433.299.211 0 .39-.138.455-.35l1.324-4.332 1.814 7.629c.068.283.282.384.46.384.203 0 .428-.131.473-.425l1.605-10.425 1.673 7.83c.058.272.277.395.467.395.202 0 .366-.12.441-.321l1.5-4.049 1.426 3.51c.077.189.245.306.438.306.152 0 .292-.075.382-.206l1.146-1.583.087-.046h3.026c.272 0 .492-.22.492-.492s-.22-.494-.492-.494h-3.322c-.151 0-.294.077-.383.207z"/>
+                        </svg>
+                    </a>
+                </div>
+                <ul class="navbar-nav flex-fill w-100 mb-2">
+                    <li class="nav-item dropdown">
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-home fe-16"></i>
+                            <span class="ml-3 item-text">面板</span>
+                            <span class="sr-only">(当前)</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+                            <li class="nav-item active">
+                                <a class="nav-link pl-3" href="./index.html">
+                                    <span class="ml-1 item-text">默认</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./dashboard-analytics.html">
+                                    <span class="ml-1 item-text">Analytics</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./dashboard-sales.html">
+                                    <span class="ml-1 item-text">E-commerce</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./dashboard-saas.html">
+                                    <span class="ml-1 item-text">Saas</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./dashboard-system.html">
+                                    <span class="ml-1 item-text">Systems</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-muted nav-heading mt-4 mb-1">
+                    <span>组件</span>
+                </p>
+                <ul class="navbar-nav flex-fill w-100 mb-2">
+                    <li class="nav-item dropdown">
+                        <a href="#ui-elements" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-box fe-16"></i>
+                            <span class="ml-3 item-text">界面</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-color.html">
+                                    <span class="ml-1 item-text">主题色</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-typograpy.html">
+                                    <span class="ml-1 item-text">排版</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-icons.html">
+                                    <span class="ml-1 item-text">图标</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-buttons.html">
+                                    <span class="ml-1 item-text">按钮</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-notification.html">
+                                    <span class="ml-1 item-text">通知</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-modals.html">
+                                    <span class="ml-1 item-text">浮窗</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-tabs-accordion.html">
+                                    <span class="ml-1 item-text">手风琴</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./ui-progress.html">
+                                    <span class="ml-1 item-text">进度条</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="widgets.html">
+                            <i class="fe fe-layers fe-16"></i>
+                            <span class="ml-3 item-text">组件</span>
+                            <span class="badge badge-pill badge-primary">新</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                            <i class="fe fe-credit-card fe-16"></i>
+                            <span class="ml-3 item-text">表单</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="forms">
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./form_elements.html">
+                                    <span class="ml-1 item-text">基础表单</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./form_advanced.html">
+                                    <span class="ml-1 item-text">高级表单</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./form_validation.html">
+                                    <span class="ml-1 item-text">表单验证</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./form_wizard.html">
+                                    <span class="ml-1 item-text">表单流转</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./form_layouts.html">
+                                    <span class="ml-1 item-text">表单布局</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                            <i class="fe fe-grid fe-16"></i>
+                            <span class="ml-3 item-text">表格</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="tables">
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./table_basic.html">
+                                    <span class="ml-1 item-text">基础表格</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./table_advanced.html">
+                                    <span class="ml-1 item-text">高级表格</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./table_datatables.html">
+                                    <span class="ml-1 item-text">数据表格</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="calendar.html">
+                            <i class="fe fe-calendar fe-16"></i>
+                            <span class="ml-3 item-text">日历</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#charts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                            <i class="fe fe-pie-chart fe-16"></i>
+                            <span class="ml-3 item-text">图表</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="charts">
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./chart-inline.html">
+                                    <span class="ml-1 item-text">Inline Chart</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./chart-chartjs.html">
+                                    <span class="ml-1 item-text">Chartjs</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./chart-apexcharts.html">
+                                    <span class="ml-1 item-text">ApexCharts</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./datamaps.html">
+                                    <span class="ml-1 item-text">Datamaps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-muted nav-heading mt-4 mb-1">
+                    <span>其他</span>
+                </p>
+                <ul class="navbar-nav flex-fill w-100 mb-2">
+                    <li class="nav-item dropdown">
+                        <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                            <i class="fe fe-file fe-16"></i>
+                            <span class="ml-3 item-text">页面</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100 w-100" id="pages">
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-orders.html">
+                                    <span class="ml-1 item-text">排序</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-contacts.html">
+                                    <span class="ml-1 item-text">联系</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-tickets.html">
+                                    <span class="ml-1 item-text">票据</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-timeline.html">
+                                    <span class="ml-1 item-text">时间线</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-files.html">
+                                    <span class="ml-1 item-text">文件管理</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-faqs.html">
+                                    <span class="ml-1 item-text">常见问题</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-invoice.html">
+                                    <span class="ml-1 item-text">发票</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-settings.html">
+                                    <span class="ml-1 item-text">设置</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-404.html">
+                                    <span class="ml-1 item-text">404</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-500.html">
+                                    <span class="ml-1 item-text">500</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./page-blank.html">
+                                    <span class="ml-1 item-text">空白页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#layouts" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-layout fe-16"></i>
+                            <span class="ml-3 item-text">布局</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="layouts">
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./index.html">
+                                    <span class="ml-1 item-text">默认</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="./index-horizontal.html">
+                                    <span class="ml-1 item-text">顶部导航</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-muted nav-heading mt-4 mb-1">
+                    <span>贡献</span>
+                </p>
+                <ul class="navbar-nav flex-fill w-100 mb-2">
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="donate.html">
+                            <i class="fe fe-help-circle fe-16"></i>
+                            <span class="ml-3 item-text">打赏捐赠</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn-box w-100 mt-4 mb-1">
+                    <button type="button" class="btn mb-2 btn-primary btn-lg btn-block" id="modeSwitcher"
+                        data-mode="light">
+                        <i class="fe fe-shopping-cart fe-12 mr-2"></i><span class="small">马上买</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+        <main role="main" class="main-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h2 class="page-title">Tabs</h2>
+                        <p class="lead text-muted">Adds the .nav-tabs class to generate a tabbed interface.</p>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                                    role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
+                                                    role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
+                                                    role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                                aria-labelledby="home-tab"> Anim pariatur cliche reprehenderit, enim
+                                                eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </div>
+                                            <div class="tab-pane fade" id="profile" role="tabpanel"
+                                                aria-labelledby="profile-tab"> Anim pariatur cliche reprehenderit, enim
+                                                eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </div>
+                                            <div class="tab-pane fade" id="contact" role="tabpanel"
+                                                aria-labelledby="contact-tab"> Anim pariatur cliche reprehenderit, enim
+                                                eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill"
+                                                    href="#pills-home" role="tab" aria-controls="pills-home"
+                                                    aria-selected="true">Pill Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+                                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                                    aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill"
+                                                    href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                                    aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content mb-1" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                                aria-labelledby="pills-home-tab"> Anim pariatur cliche reprehenderit,
+                                                enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                                aria-labelledby="pills-profile-tab"> Anim pariatur cliche reprehenderit,
+                                                enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"> Anim pariatur cliche reprehenderit,
+                                                enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+                                                officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow">
+                                    <div class="card-body py-4 mb-1">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                                    aria-orientation="vertical">
+                                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
+                                                        href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                                                        aria-selected="true">Home</a>
+                                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
+                                                        href="#v-pills-profile" role="tab"
+                                                        aria-controls="v-pills-profile"
+                                                        aria-selected="false">Profile</a>
+                                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+                                                        href="#v-pills-messages" role="tab"
+                                                        aria-controls="v-pills-messages"
+                                                        aria-selected="false">Messages</a>
+                                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+                                                        href="#v-pills-settings" role="tab"
+                                                        aria-controls="v-pills-settings"
+                                                        aria-selected="false">Settings</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="tab-content mb-4" id="v-pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="v-pills-home"
+                                                        role="tabpanel" aria-labelledby="v-pills-home-tab"> Anim
+                                                        pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3 wolf moon officia aute, non
+                                                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                        laborum eiusmod. </div>
+                                                    <div class="tab-pane fade mb-4" id="v-pills-profile" role="tabpanel"
+                                                        aria-labelledby="v-pills-profile-tab"> Anim pariatur cliche
+                                                        reprehenderit, enim eiusmod high life accusamus terry richardson
+                                                        ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                                        dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+                                                        3 wolf moon tempor, sunt aliqua put a bird on it squid
+                                                        single-origin coffee nulla assumenda shoreditch et. </div>
+                                                    <div class="tab-pane fade mb-4" id="v-pills-messages"
+                                                        role="tabpanel" aria-labelledby="v-pills-messages-tab"> Anim
+                                                        pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3 wolf moon officia aute, non
+                                                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                        bird on it squid single-origin coffee nulla assumenda shoreditch
+                                                        et. </div>
+                                                    <div class="tab-pane fade mb-4" id="v-pills-settings"
+                                                        role="tabpanel" aria-labelledby="v-pills-settings-tab"> Anim
+                                                        pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3 wolf moon officia aute, non
+                                                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                                        bird on it squid single-origin coffee nulla assumenda shoreditch
+                                                        et. </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Icon tabs</h5>
+                        <p>Take that same HTML with tabs, but use .nav-pills instead</p>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <ul class="nav nav-pills" id="pills-tab2" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link px-3 active" id="pills-home-tab2" data-toggle="pill"
+                                            href="#pills-home2" role="tab" aria-controls="pills-home2"
+                                            aria-selected="true"><span class="fe fe-16 fe-box"></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link px-3" id="pills-profile-tab2" data-toggle="pill"
+                                            href="#pills-profile2" role="tab" aria-controls="pills-profile2"
+                                            aria-selected="false"><span class="fe fe-16 fe-archive"></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link px-3" id="pills-contact-tab2" data-toggle="pill"
+                                            href="#pills-contact2" role="tab" aria-controls="pills-contact"
+                                            aria-selected="false"><span class="fe fe-16 fe-coffee"></span></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mb-2" id="pills-tabContent2">
+                                    <div class="tab-pane fade show active" id="pills-home2" role="tabpanel"
+                                        aria-labelledby="pills-home-tab2">
+                                        <div class="card mb-0">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                squid single-origin coffee nulla assumenda shoreditch et. </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile2" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab2"> Anim pariatur cliche reprehenderit, enim
+                                        eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                                        single-origin coffee nulla assumenda shoreditch et. </div>
+                                    <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab2"> Anim pariatur cliche reprehenderit, enim
+                                        eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                                        single-origin coffee nulla assumenda shoreditch et. </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex flex-row tab-icon">
+                                    <div class="nav flex-column nav-pills" id="v-pills-tab3" role="tablist"
+                                        aria-orientation="vertical">
+                                        <a class="nav-link py-3 active" id="v-pills-home-tab3" data-toggle="pill"
+                                            href="#v-pills-home3" role="tab" aria-controls="v-pills-home3"
+                                            aria-selected="true"><span class="fe fe-16 fe-box"></span></a>
+                                        <a class="nav-link py-3" id="v-pills-profile-tab3" data-toggle="pill"
+                                            href="#v-pills-profile3" role="tab" aria-controls="v-pills-profile3"
+                                            aria-selected="false"><span class="fe fe-16 fe-archive"></span></a>
+                                        <a class="nav-link py-3" id="v-pills-messages-tab3" data-toggle="pill"
+                                            href="#v-pills-messages3" role="tab" aria-controls="v-pills-messages3"
+                                            aria-selected="false"><span class="fe fe-16 fe-coffee"></span></a>
+                                    </div>
+                                    <div class="tab-content w-100" id="v-pills-tabContent3">
+                                        <div class="tab-pane fade show active" id="v-pills-home3" role="tabpanel"
+                                            aria-labelledby="v-pills-home-tab3">
+                                            <div class="card mb-0">
+                                                <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                    high life accusamus terry richardson ad squid. 3 wolf moon officia
+                                                    aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                    nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put
+                                                    a bird on it squid single-origin coffee nulla assumenda shoreditch
+                                                    et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                                    cred nesciunt sapiente ea proident. </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-profile3" role="tabpanel"
+                                            aria-labelledby="v-pills-profile-tab3">
+                                            <div class="card mb-0">
+                                                <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                    high life accusamus terry richardson ad squid. 3 wolf moon officia
+                                                    aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                    nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put
+                                                    a bird on it squid single-origin coffee nulla assumenda shoreditch
+                                                    et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                                    cred nesciunt sapiente ea proident. </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-messages3" role="tabpanel"
+                                            aria-labelledby="v-pills-messages-tab3">
+                                            <div class="card mb-0">
+                                                <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                    high life accusamus terry richardson ad squid. 3 wolf moon officia
+                                                    aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                                    nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put
+                                                    a bird on it squid single-origin coffee nulla assumenda shoreditch
+                                                    et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                                    cred nesciunt sapiente ea proident. </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Accordions</h5>
+                        <p>Using the card component, you can extend the default collapse behavior to create an
+                            accordion.</p>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="accordion w-100" id="accordion1">
+                                    <div class="card shadow">
+                                        <div class="card-header" id="heading1">
+                                            <a role="button" href="#collapse1" data-toggle="collapse"
+                                                data-target="#collapse1" aria-expanded="false"
+                                                aria-controls="collapse1">
+                                                <strong>Collapse one</strong>
+                                            </a>
+                                        </div>
+                                        <div id="collapse1" class="collapse show" aria-labelledby="heading1"
+                                            data-parent="#accordion1">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                squid single-origin coffee nulla assumenda shoreditch et. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header" id="heading1">
+                                            <a role="button" href="#collapse2" data-toggle="collapse"
+                                                data-target="#collapse2" aria-expanded="false"
+                                                aria-controls="collapse2">
+                                                <strong>Collapse two</strong>
+                                            </a>
+                                        </div>
+                                        <div id="collapse2" class="collapse" aria-labelledby="heading2"
+                                            data-parent="#accordion1">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                squid single-origin coffee nulla assumenda shoreditch et. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header" id="heading1">
+                                            <a role="button" href="#collapse3" data-toggle="collapse"
+                                                data-target="#collapse3" aria-expanded="false"
+                                                aria-controls="collapse3">
+                                                <strong>Collapse three</strong>
+                                            </a>
+                                        </div>
+                                        <div id="collapse3" class="collapse" aria-labelledby="heading3"
+                                            data-parent="#accordion1">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                squid single-origin coffee nulla assumenda shoreditch et. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="accordion accordion-boxed" id="accordion2">
+                                    <div class="card shadow">
+                                        <div class="card-header" id="headingOne">
+                                            <a role="button" href="#collapseOne" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="false"
+                                                aria-controls="collapseOne">
+                                                <strong>Collapse boxed One</strong>
+                                            </a>
+                                        </div>
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                            data-parent="#accordion2">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header" id="headingTwo">
+                                            <a role="button" href="#collapseTwo" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                <strong>Collapse boxed two</strong>
+                                            </a>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                            data-parent="#accordion2">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                                                keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                                you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2">
+                                        <div class="card-header" id="headingThree">
+                                            <a role="button" href="#collapseThree" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                                <strong>Collapse boxed three</strong>
+                                            </a>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#accordion2">
+                                            <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod
+                                                high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                squid single-origin coffee nulla assumenda shoreditch et. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">最新通知</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="list-group list-group-flush my-n3">
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-box fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>软件包上传成功</strong></small>
+                      <div class="my-0 text-muted small">压缩并上传包</div>
+                      <small class="badge badge-pill badge-light text-muted">1分钟前</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-download fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>小部件更新成功</strong></small>
+                      <div class="my-0 text-muted small">创建新的布局索引，表单，表格</div>
+                      <small class="badge badge-pill badge-light text-muted">2分钟前</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-inbox fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>已发送通知</strong></small>
+                      <div class="my-0 text-muted small">当我们看到数据总线时，告诉我们一个常见的问题</div>
+                      <small class="badge badge-pill badge-light text-muted">30分钟前</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-link fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>链接附在菜单上</strong></small>
+                      <div class="my-0 text-muted small">新的布局已附加到菜单</div>
+                      <small class="badge badge-pill badge-light text-muted">1小时前</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog"
+                aria-labelledby="defaultModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="defaultModalLabel">快捷方式</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body px-5">
+                            <div class="row align-items-center">
+                                <div class="col-6 text-center">
+                                    <div class="squircle bg-success justify-content-center">
+                                        <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                                    </div>
+                                    <p>区域控制</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <div class="squircle bg-primary justify-content-center">
+                                        <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                                    </div>
+                                    <p>活动</p>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-6 text-center">
+                                    <div class="squircle bg-primary justify-content-center">
+                                        <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                                    </div>
+                                    <p>小程序</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <div class="squircle bg-primary justify-content-center">
+                                        <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                                    </div>
+                                    <p>上传</p>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-6 text-center">
+                                    <div class="squircle bg-primary justify-content-center">
+                                        <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                                    </div>
+                                    <p>用户</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <div class="squircle bg-primary justify-content-center">
+                                        <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                                    </div>
+                                    <p>设置</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/jquery.min.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/popper.min.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/moment.min.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/simplebar.min.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src='js/daterangepicker.js' type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/tinycolor-min.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/config.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="js/apps.js" type="fcee58424a4eaf7f60076912-text/javascript"></script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="fcee58424a4eaf7f60076912-|49" defer=""></script>
+    <script data-cfasync="false" src="js/nprogress.min.js"></script>
+    <script>
+        NProgress.configure({
+            easing: 'ease', // 缓冲动画类型，可选值如'ease'、'linear'等
+            speed: 500, // 动画速度，单位为毫秒
+            trickleSpeed: 200, // 每次进度条步进的速度，单位为毫秒
+            showSpinner: false, // 是否显示环形进度动画
+            minimum: 0.2 // 设置开始时最低百分比  同inc
+        });
+
+        NProgress.start();
+        NProgress.done();
+    </script>
+</body>
+
+</html>

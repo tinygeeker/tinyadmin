@@ -72,15 +72,11 @@
 
         <div class="w-100 mb-4 d-flex">
           <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                             id="logo"
-                             x="0px"
-                             y="0px"
-                             class="navbar-brand-img brand-sm"
-                             viewBox="0 0 25 25"
-                        >
-                            <path xmlns="http://www.w3.org/2000/svg" d="M19.803 13.207l-.829 1.093-1.554-3.826c-.077-.189-.244-.306-.437-.306-.157 0-.356.084-.444.321l-1.356 3.664-1.872-8.759c-.062-.291-.288-.394-.462-.394-.203 0-.428.131-.473.424l-1.629 10.581-1.658-6.968c-.067-.282-.291-.382-.463-.382-.167 0-.374.092-.453.349l-1.453 4.753-1.07-2.53c-.078-.185-.245-.299-.436-.299-.154 0-.294.076-.385.209l-1.257 1.805-.087.058h-2.985c-.276 0-.5.224-.5.5s.224.5.5.5h3.284c.152 0 .296-.074.386-.206l.948-1.353 1.24 2.929c.079.187.241.299.433.299.211 0 .39-.138.455-.35l1.324-4.332 1.814 7.629c.068.283.282.384.46.384.203 0 .428-.131.473-.425l1.605-10.425 1.673 7.83c.058.272.277.395.467.395.202 0 .366-.12.441-.321l1.5-4.049 1.426 3.51c.077.189.245.306.438.306.152 0 .292-.075.382-.206l1.146-1.583.087-.046h3.026c.272 0 .492-.22.492-.492s-.22-.494-.492-.494h-3.322c-.151 0-.294.077-.383.207z"/>
-                        </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="logo" x="0px" y="0px" class="navbar-brand-img brand-sm"
+              viewBox="0 0 25 25">
+              <path xmlns="http://www.w3.org/2000/svg"
+                d="M19.803 13.207l-.829 1.093-1.554-3.826c-.077-.189-.244-.306-.437-.306-.157 0-.356.084-.444.321l-1.356 3.664-1.872-8.759c-.062-.291-.288-.394-.462-.394-.203 0-.428.131-.473.424l-1.629 10.581-1.658-6.968c-.067-.282-.291-.382-.463-.382-.167 0-.374.092-.453.349l-1.453 4.753-1.07-2.53c-.078-.185-.245-.299-.436-.299-.154 0-.294.076-.385.209l-1.257 1.805-.087.058h-2.985c-.276 0-.5.224-.5.5s.224.5.5.5h3.284c.152 0 .296-.074.386-.206l.948-1.353 1.24 2.929c.079.187.241.299.433.299.211 0 .39-.138.455-.35l1.324-4.332 1.814 7.629c.068.283.282.384.46.384.203 0 .428-.131.473-.425l1.605-10.425 1.673 7.83c.058.272.277.395.467.395.202 0 .366-.12.441-.321l1.5-4.049 1.426 3.51c.077.189.245.306.438.306.152 0 .292-.075.382-.206l1.146-1.583.087-.046h3.026c.272 0 .492-.22.492-.492s-.22-.494-.492-.494h-3.322c-.151 0-.294.077-.383.207z" />
+            </svg>
           </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -383,7 +379,7 @@
               <div class="col-md-6">
                 <div class="card shadow mb-4">
                   <div class="card-body">
-                    <p class="mb-3"><strong>Input group</strong></p>
+                    <p class="mb-3"><strong>输入组合</strong></p>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">@</span>
@@ -398,7 +394,7 @@
                         <span class="input-group-text" id="basic-addon2">@example.com</span>
                       </div>
                     </div>
-                    <label for="basic-url">Your vanity URL</label>
+                    <label for="basic-url">个人主页</label>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon3">https://github.com/tinygeeker</span>
@@ -437,14 +433,14 @@
                 </div>
                 <div class="card shadow mb-4">
                   <div class="card-body">
-                    <p class="mb-3"><strong>Switches</strong></p>
+                    <p class="mb-3"><strong>开关按钮</strong></p>
                     <div class="custom-control custom-switch">
                       <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                      <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                      <label class="custom-control-label" for="customSwitch1">普通开关按钮</label>
                     </div>
                     <div class="custom-control custom-switch mb-2">
                       <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-                      <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+                      <label class="custom-control-label" for="customSwitch2">禁用开关按钮</label>
                     </div>
                   </div>
                 </div>
@@ -452,53 +448,33 @@
               <div class="col-md-6">
                 <div class="card shadow mb-4">
                   <div class="card-body">
-                    <p class="mb-2"><strong>Select2</strong></p>
+                    <p class="mb-2"><strong>选项框</strong></p>
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="simple-select2">Simple Select</label>
+                        <label for="simple-select2">普通选项框</label>
                         <select class="form-control select2" id="simple-select2">
-                          <optgroup label="Alaskan/Hawaiian Time Zone">
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
+                          <optgroup label="亚洲">
+                            <option value="china">中国</option>
+                            <option value="japan">日本</option>
                           </optgroup>
-                          <optgroup label="Pacific Time Zone">
-                            <option value="CA">California</option>
-                            <option value="NV" disabled="disabled">Nevada (disabled)</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
+                          <optgroup label="欧美">
+                            <option value="america">美国</option>
+                            <option value="australia" disabled="disabled">澳大利亚</option>
+                            <option value="switzerland">瑞士</option>
                           </optgroup>
                         </select>
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="multi-select2">Multiple Select</label>
+                        <label for="multi-select2">批量选项框</label>
                         <select class="form-control select2-multi" id="multi-select2">
-                          <optgroup label="Mountain Time Zone">
-                            <option value="AZ">Arizona</option>
-                            <option value="CO">Colorado</option>
-                            <option value="ID">Idaho</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="UT">Utah</option>
-                            <option value="WY">Wyoming</option>
+                          <optgroup label="亚洲">
+                            <option value="china">中国</option>
+                            <option value="japan">日本</option>
                           </optgroup>
-                          <optgroup label="Central Time Zone">
-                            <option value="AL">Alabama</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TX">Texas</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="WI">Wisconsin</option>
+                          <optgroup label="欧美">
+                            <option value="america">美国</option>
+                            <option value="australia">澳大利亚</option>
+                            <option value="switzerland">瑞士</option>
                           </optgroup>
                         </select>
                       </div>
@@ -507,10 +483,10 @@
                 </div>
                 <div class="card shadow mb-4">
                   <div class="card-body">
-                    <p class="mb-2"><strong>Date & Time Pickers</strong></p>
+                    <p class="mb-2"><strong>时间选择器</strong></p>
                     <div class="form-row">
                       <div class="form-group col-md-8">
-                        <label for="date-input1">Date Picker</label>
+                        <label for="date-input1">日期选择器</label>
                         <div class="input-group">
                           <input type="text" class="form-control drgpicker" id="date-input1" value="04/24/2020"
                             aria-describedby="button-addon2">
@@ -521,7 +497,7 @@
                         </div>
                       </div>
                       <div class="form-group col-md-4">
-                        <label for="time-input2">Time Picker</label>
+                        <label for="time-input2">时间选择器</label>
                         <div class="input-group">
                           <input type="text" class="form-control time-input" id="time-input2" placeholder=""
                             aria-describedby="button-addon2">
@@ -532,13 +508,13 @@
                 </div>
                 <div class="card shadow mb-4">
                   <div class="card-body">
-                    <p class="mb-2"><strong>Date Range Picker</strong></p>
+                    <p class="mb-2"><strong>日期范围选择器</strong></p>
                     <div class="form-group">
-                      <label for="date-input1">Date Range</label>
+                      <label for="date-input1">日期范围</label>
                       <input type="text" name="datetimes" class="form-control datetimes" />
                     </div>
                     <div class="form-group">
-                      <label for="reportrange">Predefined Date Ranges</label>
+                      <label for="reportrange">自定义日期范围</label>
                       <div id="reportrange" class="border px-2 py-2 bg-light">
                         <i class="fe fe-calendar fe-16 mx-2"></i>
                         <span></span>

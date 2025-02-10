@@ -884,46 +884,46 @@
       </div>
     </main>
   </div>
-  <script src="js/jquery.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/popper.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/moment.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/bootstrap.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/simplebar.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/daterangepicker.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/tinycolor-min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/config.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/d3.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/topojson.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/datamaps.all.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/datamaps-zoomto.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/datamaps.custom.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/Chart.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script type="915058cf3f221ce0d459c710-text/javascript">
-      /* defind global options */
-      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-      Chart.defaults.global.defaultFontColor = colors.mutedColor;
-    </script>
-  <script src="js/gauge.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/jquery.sparkline.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/apexcharts.min.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="js/apexcharts.custom.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/jquery.mask.min.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/select2.min.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/jquery.steps.min.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/jquery.validate.min.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/jquery.timepicker.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src='js/quill.min.js' type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script type="915058cf3f221ce0d459c710-text/javascript">
-      $('.select2').select2(
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/popper.min.js" type="text/javascript"></script>
+  <script src="js/moment.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/simplebar.min.js" type="text/javascript"></script>
+  <script src='js/daterangepicker.js' type="text/javascript"></script>
+  <script src="js/tinycolor-min.js" type="text/javascript"></script>
+  <script src="js/config.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/topojson.min.js" type="text/javascript"></script>
+  <script src="js/datamaps.all.min.js" type="text/javascript"></script>
+  <script src="js/datamaps-zoomto.js" type="text/javascript"></script>
+  <script src="js/datamaps.custom.js" type="text/javascript"></script>
+  <script src="js/Chart.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    /* defind global options */
+    Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+    Chart.defaults.global.defaultFontColor = colors.mutedColor;
+  </script>
+  <script src="js/gauge.min.js" type="text/javascript"></script>
+  <script src="js/jquery.sparkline.min.js" type="text/javascript"></script>
+  <script src="js/apexcharts.min.js" type="text/javascript"></script>
+  <script src="js/apexcharts.custom.js" type="text/javascript"></script>
+  <script src='js/jquery.mask.min.js' type="text/javascript"></script>
+  <script src='js/select2.min.js' type="text/javascript"></script>
+  <script src='js/jquery.steps.min.js' type="text/javascript"></script>
+  <script src='js/jquery.validate.min.js' type="text/javascript"></script>
+  <script src='js/jquery.timepicker.js' type="text/javascript"></script>
+  <script src='js/quill.min.js' type="text/javascript"></script>
+  <script type="text/javascript">
+    $('.select2').select2(
       {
         theme: 'bootstrap4',
       });
-      $('.select2-multi').select2(
+    $('.select2-multi').select2(
       {
         multiple: true,
         theme: 'bootstrap4',
       });
-      $('.drgpicker').daterangepicker(
+    $('.drgpicker').daterangepicker(
       {
         singleDatePicker: true,
         timePicker: false,
@@ -933,14 +933,13 @@
           format: 'MM/DD/YYYY'
         }
       });
-      $('.time-input').timepicker(
+    $('.time-input').timepicker(
       {
         'scrollDefault': 'now'
       });
-      /** date range picker */
-      if ($('.datetimes').length)
-      {
-        $('.datetimes').daterangepicker(
+    /** date range picker */
+    if ($('.datetimes').length) {
+      $('.datetimes').daterangepicker(
         {
           timePicker: true,
           startDate: moment().startOf('hour'),
@@ -950,15 +949,14 @@
             format: 'M/DD hh:mm A'
           }
         });
-      }
-      var start = moment().subtract(29, 'days');
-      var end = moment();
+    }
+    var start = moment().subtract(29, 'days');
+    var end = moment();
 
-      function cb(start, end)
-      {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      }
-      $('#reportrange').daterangepicker(
+    function cb(start, end) {
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+    $('#reportrange').daterangepicker(
       {
         startDate: start,
         endDate: end,
@@ -972,22 +970,22 @@
           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         }
       }, cb);
-      cb(start, end);
-      $('.input-placeholder').mask("00/00/0000",
+    cb(start, end);
+    $('.input-placeholder').mask("00/00/0000",
       {
         placeholder: "__/__/____"
       });
-      $('.input-zip').mask('00000-000',
+    $('.input-zip').mask('00000-000',
       {
         placeholder: "____-___"
       });
-      $('.input-money').mask("#.##0,00",
+    $('.input-money').mask("#.##0,00",
       {
         reverse: true
       });
-      $('.input-phoneus').mask('(000) 000-0000');
-      $('.input-mixed').mask('AAA 000-S0S');
-      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+    $('.input-phoneus').mask('(000) 000-0000');
+    $('.input-mixed').mask('AAA 000-S0S');
+    $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
       {
         translation:
         {
@@ -999,67 +997,66 @@
         },
         placeholder: "___.___.___.___"
       });
-      // editor
-      var editor = document.getElementById('editor');
-      if (editor)
-      {
-        var toolbarOptions = [
-          [
+    // editor
+    var editor = document.getElementById('editor');
+    if (editor) {
+      var toolbarOptions = [
+        [
           {
             'font': []
           }],
-          [
+        [
           {
             'header': [1, 2, 3, 4, 5, 6, false]
           }],
-          ['bold', 'italic', 'underline', 'strike'],
-          ['blockquote', 'code-block'],
-          [
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+        [
           {
             'header': 1
           },
           {
             'header': 2
           }],
-          [
+        [
           {
             'list': 'ordered'
           },
           {
             'list': 'bullet'
           }],
-          [
+        [
           {
             'script': 'sub'
           },
           {
             'script': 'super'
           }],
-          [
+        [
           {
             'indent': '-1'
           },
           {
             'indent': '+1'
           }], // outdent/indent
-          [
+        [
           {
             'direction': 'rtl'
           }], // text direction
-          [
+        [
           {
             'color': []
           },
           {
             'background': []
           }], // dropdown with defaults from theme
-          [
+        [
           {
             'align': []
           }],
-          ['clean'] // remove formatting button
-        ];
-        var quill = new Quill(editor,
+        ['clean'] // remove formatting button
+      ];
+      var quill = new Quill(editor,
         {
           modules:
           {
@@ -1067,32 +1064,28 @@
           },
           theme: 'snow'
         });
-      }
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function()
-      {
-        'use strict';
-        window.addEventListener('load', function()
-        {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form)
-          {
-            form.addEventListener('submit', function(event)
-            {
-              if (form.checkValidity() === false)
-              {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-  <script data-cfasync="false" src="js/nprogress.min.js"></script>
+    }
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+  <script src="js/apps.js" type="text/javascript"></script>
+  <script src="js/nprogress.min.js" type="text/javascript"></script>
   <script>
     NProgress.configure({
       easing: 'ease', // 缓冲动画类型，可选值如'ease'、'linear'等
@@ -1105,9 +1098,6 @@
     NProgress.start();
     NProgress.done();
   </script>
-  <script src="js/apps.js" type="915058cf3f221ce0d459c710-text/javascript"></script>
-  <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
-    data-cf-settings="915058cf3f221ce0d459c710-|49" defer=""></script>
 </body>
 
 </html>
